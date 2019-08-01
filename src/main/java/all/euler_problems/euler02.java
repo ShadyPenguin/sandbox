@@ -17,6 +17,8 @@ import all.RunnerUtil;
  * @since 08/2019
  */
 public class euler02 {
+  private static Callable question = () -> euler02.sumEvenFibonacci(4_000_000L);
+
   static long evenTotal = 2L;
   static long oddTotal = 1L;
   static long first = 1L;
@@ -52,8 +54,7 @@ public class euler02 {
   }
 
   public static void main(String[] args) {
-    Callable call = () -> euler02.sumEvenFibonacci(4_000_000L);
     // TODO: verify in UI
-    System.out.println("Answer: " + RunnerUtil.run(call)); // 4613732
+    System.out.println("Answer: " + RunnerUtil.run(question)); // 4613732
   }
 }

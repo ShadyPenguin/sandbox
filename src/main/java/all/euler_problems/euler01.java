@@ -1,6 +1,7 @@
 package all.euler_problems;
 
 import java.util.HashSet;
+import java.util.concurrent.Callable;
 
 import all.RunnerUtil;
 
@@ -16,9 +17,10 @@ import all.RunnerUtil;
  */
 class euler01 {
 
+  private static Callable question = () -> sumMultiples(1_000);
+
   static Integer sumMultiples(int num) {
-    return Integer.valueOf(RunnerUtil.run(() ->
-        findMultiples(num).stream().reduce(0, Integer::sum)));
+    return findMultiples(num).stream().reduce(0, Integer::sum);
   }
 
   static HashSet<Integer> findMultiples(int num) {
@@ -42,7 +44,7 @@ class euler01 {
   }
 
   public static void main(String[] args) {
-    // TODO: Verify correct in UI
-    System.out.println("Answer: " + euler01.sumMultiples(1000)); // 233168
+    // TODO: verify in UI
+    System.out.println("Answer: " + RunnerUtil.run(question)); // 233168
   }
 }
