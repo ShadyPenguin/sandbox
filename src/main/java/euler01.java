@@ -15,12 +15,8 @@ import java.util.HashSet;
 class euler01 {
 
   static Integer sumMultiples(int num) {
-    Instant start = Instant.now();
-    int sum = findMultiples(num)
-        .stream()
-        .reduce(0, Integer::sum);
-    System.out.println("Time taken in millis: " + Duration.between(start, Instant.now()).toMillis());
-    return sum;
+    return Integer.valueOf(RunnerUtil.run(() ->
+        findMultiples(num).stream().reduce(0, Integer::sum)));
   }
 
   static HashSet<Integer> findMultiples(int num) {
@@ -44,6 +40,7 @@ class euler01 {
   }
 
   public static void main(String[] args) {
-    System.out.println("Answer: " + euler01.sumMultiples(1000));
+    // TODO: Verify correct in UI
+    System.out.println("Answer: " + euler01.sumMultiples(1000)); // 233168
   }
 }

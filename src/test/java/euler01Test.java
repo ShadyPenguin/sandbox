@@ -34,7 +34,6 @@ public class euler01Test {
     answer.add(5);
     answer.add(6);
     answer.add(9);
-    answer.add(10);
     assertEquals(answer, euler01.findMultiples(10));
   }
 
@@ -44,7 +43,7 @@ public class euler01Test {
   }
 
   @After
-  public void tearDown() throws Exception {
+  public void tearDown() {
     answer.clear();
   }
 }
