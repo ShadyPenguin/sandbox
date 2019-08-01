@@ -1,3 +1,5 @@
+package all.euler_problems;
+
 import java.util.HashSet;
 
 import org.junit.After;

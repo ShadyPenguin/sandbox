@@ -1,3 +1,5 @@
+package all.euler_problems;
+
 import org.junit.After;
 import org.junit.Test;
 

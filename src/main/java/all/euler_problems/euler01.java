@@ -1,6 +1,8 @@
-import java.time.Duration;
-import java.time.Instant;
+package all.euler_problems;
+
 import java.util.HashSet;
+
+import all.RunnerUtil;
 
 /**
  * Multiples of 3 and 5

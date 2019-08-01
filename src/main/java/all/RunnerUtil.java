@@ -1,3 +1,5 @@
+package all;
+
 import java.time.Duration;
 import java.time.Instant;
 import java.util.concurrent.Callable;
@@ -8,8 +10,8 @@ import java.util.concurrent.Callable;
  * @author Jake Sikora
  * @since 08/2019
  */
-class RunnerUtil {
-  static String run(Callable<?> callable) {
+public class RunnerUtil {
+  public static String run(Callable<?> callable) {
     String answer = "";
     Instant start = Instant.now();
     try {
