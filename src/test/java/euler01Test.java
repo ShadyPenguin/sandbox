@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Jake Sikora
@@ -11,31 +13,36 @@ import static org.junit.Assert.assertEquals;
  */
 public class euler01Test {
 
-  private static HashSet<Long> answer = new HashSet();
+  private static HashSet<Integer> answer = new HashSet<>();
 
   @Test
-  public void multiples_3() {
-    answer.add(3L);
-    assertEquals(euler01.findMultiples(3L), answer);
+  public void multiplesOfThree() {
+    assertTrue(euler01.isMultipleOfThree(3));
+    assertFalse(euler01.isMultipleOfThree(5));
   }
 
 
   @Test
-  public void multiples_5() {
-    answer.add(3L);
-    answer.add(5L);
-    assertEquals(euler01.findMultiples(5L), answer);
+  public void multiplesOfFive() {
+    assertFalse(euler01.isMultipleOfFive(3));
+    assertTrue(euler01.isMultipleOfFive(5));
   }
 
   @Test
   public void multiples_10() {
-    answer.add(3L);
-    answer.add(5L);
-    answer.add(6L);
-    answer.add(9L);
-    answer.add(10L);
-    assertEquals(euler01.findMultiples(10L), answer);
+    answer.add(3);
+    answer.add(5);
+    answer.add(6);
+    answer.add(9);
+    answer.add(10);
+    assertEquals(answer, euler01.findMultiples(10));
   }
+
+  @Test
+  public void sumMultiples() {
+    assertEquals(23, (int) euler01.sumMultiples(10));
+  }
+
   @After
   public void tearDown() throws Exception {
     answer.clear();

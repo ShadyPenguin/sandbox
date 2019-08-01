@@ -1,3 +1,5 @@
+import java.time.Duration;
+import java.time.Instant;
 import java.util.HashSet;
 
 /**
@@ -11,9 +13,19 @@ import java.util.HashSet;
  * @since 08/2019
  */
 class euler01 {
-  static HashSet<Long> findMultiples(long num) {
-    HashSet<Long> multiples = new HashSet<Long>();
-    for (long i = 1;i<=num;i++) {
+
+  static Integer sumMultiples(int num) {
+    Instant start = Instant.now();
+    int sum = findMultiples(num)
+        .stream()
+        .reduce(0, Integer::sum);
+    System.out.println("Time taken in millis: " + Duration.between(start, Instant.now()).toMillis());
+    return sum;
+  }
+
+  static HashSet<Integer> findMultiples(int num) {
+    HashSet<Integer> multiples = new HashSet<>();
+    for (int i = 1;i<num;i++) {
       if (isMultipleOfThree(i)) {
         multiples.add(i);
       } else if (isMultipleOfFive(i)) {
@@ -23,11 +35,15 @@ class euler01 {
     return multiples;
   }
 
-  private static boolean isMultipleOfThree(long i) {
+  static boolean isMultipleOfThree(int i) {
     return i % 3 == 0;
   }
 
-  private static boolean isMultipleOfFive(long i) {
+  static boolean isMultipleOfFive(int i) {
     return i % 5 == 0;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Answer: " + euler01.sumMultiples(1000));
   }
 }
