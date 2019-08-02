@@ -15,8 +15,7 @@ import all.RunnerUtil;
  * @author Jake Sikora
  * @since 08/2019
  */
-class euler01 {
-
+class Euler01 {
   private static Callable question = () -> sumMultiples(1_000);
 
   static Integer sumMultiples(int num) {
@@ -25,7 +24,7 @@ class euler01 {
 
   static HashSet<Integer> findMultiples(int num) {
     HashSet<Integer> multiples = new HashSet<>();
-    for (int i = 1;i<num;i++) {
+    for (int i = 1; i < num; i++) {
       if (isMultipleOfThree(i)) {
         multiples.add(i);
       } else if (isMultipleOfFive(i)) {
@@ -43,7 +42,6 @@ class euler01 {
     return i % 5 == 0;
   }
 
-  // TODO: verify in UI
   public static void main(String[] args) {
     System.out.println("Answer: " + RunnerUtil.run(question));
     //  Time taken in millis: 9

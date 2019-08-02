@@ -14,12 +14,11 @@ import all.RunnerUtil;
  * @author Jake Sikora
  * @since 08/2019
  */
-class euler03 {
-  private static Callable question = () -> euler03.largestPrimeFactor(600_851_475_143L);
+class Euler03 {
+  private static Callable question = () -> Euler03.largestPrimeFactor(600_851_475_143L);
 
   static long largestPrimeFactor(long num) {
     long i = 2;
-    // If we don't get a prime factor by the time we hit the halfway point this number is prime.
     while (i < (num / 2)) {
       if (num % i == 0) {
         long largeFactor = num / i;
@@ -29,9 +28,9 @@ class euler03 {
       }
       i++;
     }
-    // Return -1 if the number is prime
     return -1;
   }
+
   /**
    * Very primitive way to determine if a number is a prime number. This is the first method to
    * refactor if we run into timing issues.
@@ -51,7 +50,6 @@ class euler03 {
     return true;
   }
 
-  // TODO: Verify in UI
   public static void main(String[] args) {
     System.out.println("Answer: " + RunnerUtil.run(question));
     //  Time taken in millis: 997
