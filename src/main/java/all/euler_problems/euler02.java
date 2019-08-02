@@ -52,9 +52,10 @@ public class euler02 {
     second = 2L;
     next = first + second;
   }
-
+  // TODO: verify in UI
   public static void main(String[] args) {
-    // TODO: verify in UI
-    System.out.println("Answer: " + RunnerUtil.run(question)); // 4613732
+    System.out.println("Answer: " + RunnerUtil.run(question));
+    //  Time taken in millis: 0
+    //  Answer: 4613732
   }
 }

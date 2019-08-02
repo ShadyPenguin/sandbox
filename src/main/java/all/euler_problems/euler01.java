@@ -43,8 +43,10 @@ class euler01 {
     return i % 5 == 0;
   }
 
+  // TODO: verify in UI
   public static void main(String[] args) {
-    // TODO: verify in UI
-    System.out.println("Answer: " + RunnerUtil.run(question)); // 233168
+    System.out.println("Answer: " + RunnerUtil.run(question));
+    //  Time taken in millis: 9
+    //  Answer: 233168
   }
 }
